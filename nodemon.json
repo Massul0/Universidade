@@ -1,9 +1,9 @@
 {
     "env":{
-        "MYSQL_USER": "root",
-        "MYSQL_PASSWORD": "",
-        "MYSQL_DATABASE": "Universidade",
-        "MYSQL_HOST": "localhost",
+        "MYSQL_USER": "b914cae2407dcb",
+        "MYSQL_PASSWORD": "07f527c7",
+        "MYSQL_DATABASE": "heroku_a1e8964ffba4558",
+        "MYSQL_HOST": "us-cdbr-east-02.cleardb.com",
         "MYSQL_PORT": 3306,
         "JWT_KEY": "segredo"  
     } 
