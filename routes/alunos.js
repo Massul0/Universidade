@@ -11,7 +11,7 @@ const login = require('../middleware/login');
 router.post('/login', (req, res, next)=>{
     const login = {
         matricula: req.body.matricula,
-        senha: req.body.preco
+        senha: req.body.senha
     };
 
     mysql.getConnection((error, conn)=>{
