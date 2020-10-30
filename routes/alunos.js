@@ -55,7 +55,7 @@ router.get('/consultaAluno/:id', login, (req, res, next)=>{
     mysql.getConnection((error, conn) => {
         if(error) {return res.status(500).send({ error: error}) }
         conn.query(
-            "SELECT t.sala AS Sala, d.nome AS Disciplina, a.matricula AS Matricula, CONCAT(p.pnome, ' ', p.unome) AS Nome, t.primeira_nota AS 1_Nota, t.segunda_nota AS 2_Nota, t.faltas AS Faltas FROM turma AS t INNER JOIN disciplina AS d ON t.fk_turma_disciplina = d.id INNER JOIN aluno AS a ON t.fk_turma_aluno = a.id INNER JOIN pessoa AS p ON a.id = p.id INNER JOIN pessoa AS pr ON pr.id = p.id WHERE p.id = ?",
+            "SELECT t.sala AS Sala, d.nome AS Disciplina, a.matricula AS Matricula, CONCAT(p.pnome, ' ', p.unome) AS Nome, t.primeira_nota AS pNota, t.segunda_nota AS sNota, t.faltas AS Faltas FROM turma AS t INNER JOIN disciplina AS d ON t.fk_turma_disciplina = d.id INNER JOIN aluno AS a ON t.fk_turma_aluno = a.id INNER JOIN pessoa AS p ON a.id = p.id INNER JOIN pessoa AS pr ON pr.id = p.id WHERE p.id = ?",
             [req.params.id],
             (error, resultado, fields) => {
                 if (error) { return res.status(500).send({ error: error}) }
